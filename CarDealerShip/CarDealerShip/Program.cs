@@ -10,6 +10,9 @@ namespace CarDealerShip
     {
         static void Main(string[] args)
         {
+            Vehicle ppp = new Vehicle();
+            ppp.takeForTestDrive();
+            Console.ReadKey();
         }
     }
 }
