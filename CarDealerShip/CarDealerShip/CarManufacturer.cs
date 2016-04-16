@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarDealerShip
 {
-    public class CarManufactor
+    public class CarManufacturer
     {
+
     }
 }

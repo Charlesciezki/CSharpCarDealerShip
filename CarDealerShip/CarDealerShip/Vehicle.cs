@@ -8,7 +8,9 @@ namespace CarDealerShip
 {
     public class Vehicle : IDrivible
     {
-        
+        public int price;
+        public string make;
+        public bool hasBeenTested;
         public void takeForTestDrive()
         {
             Console.Clear();
@@ -19,7 +21,7 @@ namespace CarDealerShip
                 Thread.Sleep(200);
                 Console.Write(". ");
             }
-            //Console.WriteLine(" ");
+
             Console.WriteLine("\n\rThe customer took it back to the lot!");
         }
     }
