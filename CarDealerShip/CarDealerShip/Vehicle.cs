@@ -10,7 +10,7 @@ namespace CarDealerShip
     {
         public int price;
         public string make;
-        public bool hasBeenTested;
+        public bool hasBeenTested = false;
         public void takeForTestDrive()
         {
             Console.Clear();

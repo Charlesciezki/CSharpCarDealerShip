@@ -14,6 +14,7 @@ namespace CarDealerShip
         public SportsCar sportsCar = new SportsCar(18000, "Lexus");
         public SUV suv = new SUV(19000, "GMC");
         public List<Vehicle> carLot = new List<Vehicle>();
+        public List<Vehicle> soldVehicles = new List<Vehicle>();
 
         public CarDealership()
         {
@@ -26,6 +27,7 @@ namespace CarDealerShip
 
         public void orderCars()
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
             carLot.Add(miniVan);
             carLot.Add(pickUp);
             carLot.Add(sedan);
@@ -54,8 +56,7 @@ namespace CarDealerShip
             } else if (vehicleChoice == "suv")
             {
                 orderSUV();
-            }
-            else
+            } else
             {
                 return specialOrderCars();
             }
@@ -70,7 +71,7 @@ namespace CarDealerShip
             if (make == "toyota")
             {
                carLot.Add(new Minivan(15000, make));
-            } else if (make == "GMC")
+            } else if (make == "gmc")
             {
                 carLot.Add(new Minivan(15000, make));
             } else if (make == "nascar")
@@ -94,7 +95,7 @@ namespace CarDealerShip
             {
                 carLot.Add(new PickUp(17000, make));
             }
-            else if (make == "GMC")
+            else if (make == "gmc")
             {
                 carLot.Add(new PickUp(17000, make));
             }
@@ -169,7 +170,7 @@ namespace CarDealerShip
             {
                 carLot.Add(new SUV(19000, make));
             }
-            else if (make == "GMC")
+            else if (make == "gmc")
             {
                 carLot.Add(new SUV(19000, make));
             }

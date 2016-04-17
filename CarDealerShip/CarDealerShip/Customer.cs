@@ -52,5 +52,61 @@ namespace CarDealerShip
                 Console.WriteLine("Offer refused!");
             }
         }
+
+        public void testDrive()
+        {
+            carDealership.showCarLot();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Please Select the car you'd like to drive, by the ID number.");
+            int carSelection = Convert.ToInt32(Console.ReadLine());
+            if (carDealership.carLot[carSelection].hasBeenTested == true)
+            {
+                carDealership.carLot[carSelection].takeForTestDrive();
+            } else if (carDealership.carLot[carSelection].hasBeenTested == false)
+            {
+                Console.WriteLine("We're sorry! That one hasn't been approved for sale yet!");
+                testDrive();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("ERROR!");
+                testDrive();
+            }
+        }
+
+        public void buyACar()
+        {
+            carDealership.showCarLot();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Which car would you like? Please select by ID");
+            int carSelection = Convert.ToInt32(Console.ReadLine());
+            if (carDealership.carLot[carSelection].hasBeenTested == true)
+            {
+                carDealership.soldVehicles.Add(carDealership.carLot[carSelection]);
+                carDealership.carLot.RemoveAt(carSelection);
+                Console.WriteLine("You bought the " + carDealership.soldVehicles[carSelection].make);
+
+            }
+            else if (carDealership.carLot[carSelection].hasBeenTested == false)
+            {
+                Console.WriteLine("We're sorry! That one hasn't been approved for sale yet!");
+                testDrive();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("ERROR!");
+                buyACar();
+            }
+        }
+
+        public void showCustomerList()
+        {
+            foreach (Customer customer in customerList)
+            {
+                Console.WriteLine("Name: " + customer.name + " ID " + customer.id);
+            }
+        }
     }
 }
